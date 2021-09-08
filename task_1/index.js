@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-
 const girlsFileList = ['Olga.txt', 'Lena.txt', 'Tania.txt'];
 const boysFileList = ['Roman.txt', 'Viktor.txt', 'Max.txt'];
 
@@ -106,20 +105,20 @@ const moveToDir = (dir1, dir2) => {
 
 
 
-// Step 1 
-// Create default files directory
+// *Step 1. Create default files directory:
+
 // createDirWithFiles(allDirectories);
 
 
-// Step 2
-// Move files between directories
+// *Step 2. Move files between directories:
+
 // moveToDir('boys','girls');
 
-// Step 3
-// Move files again 
+// *Step 3. Move files again:
+
 // moveToDir('boys','girls');
 
-// Step 4 
-// Delete created directories
+// *Step 4. Delete created directories:
+
 // removeDirList(allDirectories);
 
