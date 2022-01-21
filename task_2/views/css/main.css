@@ -1,0 +1,35 @@
+h1 {
+    color : rgba(14, 7, 7, 0.897)
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+ul li {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-left: .5rem;
+    flex-basis: 20%;
+
+}
+.main-content{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+.header-item-link{
+    color:black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.header-item-link img {
+    width: 10%;
+}
+.header-item-link img {
+    flex-basis: 15%;
+}
