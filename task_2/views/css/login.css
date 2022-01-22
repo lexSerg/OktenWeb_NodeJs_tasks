@@ -168,3 +168,39 @@ html {
     }
   }
 
+  ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1.5rem;
+}
+ul li {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-left: .5rem;
+    position: relative;
+    width: 95px;
+    transition: 1s;
+    border-radius:10%
+    
+}
+ul li:hover {
+    background:rgb(70, 126, 179);
+}
+a{
+  text-decoration: none;
+}
+
+li a img {
+  position: absolute;
+  top: 5px;
+  left: 23px;
+  width: 45px;
+}
+li a p {
+  padding: 5px;
+  margin: 47px 0 0 0;
+  color: #fff;
+  text-align: center;
+}

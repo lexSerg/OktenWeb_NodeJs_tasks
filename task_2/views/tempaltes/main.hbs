@@ -12,6 +12,7 @@
         <nav>
             <ul>
                 {{#if isAuthorized}}
+                <div class="welcome-user__block">Welcome user: <b>{{currentUser}}</b> </div> 
                 <li class="header-item">
                     <a  href="/login" class="header-item-link">
                         <img src="../img/logout.png" alt="logout-icon">
@@ -35,10 +36,10 @@
 
             </ul>
         </nav>
-    </div>
+    </header class="header">
     
     <div class="main-content">
-        <h1>Main page</h1>
+        <h1>Home page</h1>
         {{#if isAuthorized}}
         <h2>Users list:</h2>
             <div class="users_block">

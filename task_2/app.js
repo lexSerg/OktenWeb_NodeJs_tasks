@@ -1,6 +1,7 @@
 const {usersArr} = require('./localUsers/registeredUsers');
-let {loginUser} = require('./localUsers/loginUser');
+let {loginUser : currentUser} = require('./localUsers/loginUser');
 let isAuthorized = false;
+let errorType = '';
 const express = require('express');
 const app = express();
 const {engine : hbsEngine} = require('express-handlebars');
@@ -18,10 +19,10 @@ app.listen(5000, () => {
 });
 
 app.get('/', (req, res) => {
-    res.render('main', {users : usersArr, isAuthorized})
+    res.render('main', {users : usersArr, isAuthorized, currentUser})
 });
 app.get('/error', (req, res) => {
-    res.render('error', {isAuthorized})
+    res.render('error', {isAuthorized, errorType})
 });
 app.get('/login', (req, res) => {
     if (!isAuthorized) res.render('login');
@@ -37,16 +38,31 @@ app.get('/register', (req, res) => {
 app.post('/login', (req, res) => {
     const {login, password} = req.body;
     // loginValidator(login, password, usersArr) ? console.log('Data is not valid') : console.log('Welcome');
-    if (loginValidator(login, password, usersArr)) res.redirect('/error');
+    if (loginValidator(login, password, usersArr)) {
+        errorType = 'You enter not valid data';
+        res.redirect('/error');
+    }
     if (!loginValidator(login, password, usersArr)) {
         isAuthorized = true;
+        currentUser = login;
         res.redirect('/');
     }
 })
 app.post('/register', (req, res) => {
     const {login, email, password} = req.body;
-    regitrationValidator(login, email, usersArr) ? usersArr.push({login, email, password}) : console.log('This user already exist');
-    res.redirect('/')
+    if (!regitrationValidator(login, email, usersArr)) {
+        res.redirect('/error');
+        errorType = 'User with this login or email already exist';
+    } 
+    if (regitrationValidator(login, email, usersArr)) {
+        usersArr.push({login, email, password});
+        isAuthorized = true;
+        currentUser = login;
+        res.redirect('/');
+    }
+    // regitrationValidator(login, email, usersArr) ? usersArr.push({login, email, password}) : console.log('This user already exist');
+    // res.redirect('/')
+
 });
 
 

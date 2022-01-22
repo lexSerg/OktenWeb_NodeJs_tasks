@@ -7,7 +7,7 @@ body {
     font-family: sans-serif;
     background-color: #243b55;
 }
-h1, h2, h4 {
+h1, h2, h4, p {
     color : rgba(245, 240, 240, 0.897)
 }
 ul{
@@ -61,4 +61,8 @@ li a p {
 .user_item {
     padding: 2px 16px;
     margin: 10px;
+}
+.welcome-user__block{
+    position: absolute;
+    top: 95px;
 }
