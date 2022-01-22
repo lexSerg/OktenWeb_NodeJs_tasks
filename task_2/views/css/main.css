@@ -8,7 +8,7 @@ body {
     background: linear-gradient(#141e30, #243b55);
 }
 h1 {
-    color : rgba(14, 7, 7, 0.897)
+    color : rgba(245, 240, 240, 0.897)
 }
 ul{
     list-style: none;
@@ -24,6 +24,7 @@ ul li {
     position: relative;
     width: 95px;
     transition: 1s;
+    border-radius:10%
     
 }
 ul li:hover {
@@ -45,6 +46,6 @@ li a img {
 li a p {
     padding: 5px;
     margin: 47px 0 0 0;
-    color: black;
+    color: #fff;
     text-align: center;
 }
