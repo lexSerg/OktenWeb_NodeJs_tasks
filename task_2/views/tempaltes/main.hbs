@@ -11,25 +11,45 @@
     <header class="header">
         <nav>
             <ul>
+                {{#if isAuthorized}}
+                <li class="header-item">
+                    <a  href="/login" class="header-item-link">
+                        <img src="../img/logout.png" alt="logout-icon">
+                        <p>Logout</p>
+                    </a>
+                </li>
+                {{else}}
                 <li class="header-item">
                     <a  href="/login" class="header-item-link">
                         <img src="../img/login.png" alt="login-icon">
                         <p>Login</p>
                     </a>
                 </li>
-
                 <li class="header-item">
                     <a  href="/register" class="header-item-link">
                         <img src="../img/registration.png" alt="registration-icon">
                         <p>Registration</p>
                     </a>
                 </li>
+                {{/if}}
+
             </ul>
         </nav>
     </div>
     
     <div class="main-content">
         <h1>Main page</h1>
+        {{#if isAuthorized}}
+        <h2>Users list:</h2>
+            <div class="users_block">
+                {{#each users}}
+                    <div class="user_item">
+                        <h4><b>Login: </b>{{this.login}}</h4>
+                        <h4><b>Email: </b>{{this.email}}</p>
+                    </div>
+                {{/each}}
+            </div> 
+        {{/if}}
     </div>
 </body>
 </html>
