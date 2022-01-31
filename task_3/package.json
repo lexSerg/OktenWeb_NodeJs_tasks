@@ -1,0 +1,23 @@
+{
+  "name": "task_2",
+  "version": "1.0.0",
+  "description": "node express task2",
+  "main": "app.js",
+  "scripts": {
+    "watch": "nodemon"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "express-handlebars"
+  ],
+  "author": "lexSer <serginko21@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
